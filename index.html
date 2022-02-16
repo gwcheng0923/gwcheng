@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background-image: url(img/动态壁纸.gif);
+			}
+
+			.box1 {
+
+				width: 400px;
+				/* border-bottom: 1px solid #ccc; */
+				margin: 100px auto;
+				margin-bottom: 10px;
+			}
+
+			.box1 input {
+				width: 383px;
+				height: 30px;
+				border: 0;
+				outline: none;
+			}
+
+			.box {
+				position: relative;
+				width: 400px;
+				/* border-bottom: 1px solid #ccc; */
+				margin: 0px auto;
+				margin-top: 30px;
+
+			}
+
+			.box input {
+				width: 383px;
+				height: 30px;
+				border: 0;
+				outline: none;
+			}
+
+			.box img {
+				position: absolute;
+				right: 5px;
+				top: 19px;
+
+
+			}
+
+			.anniu {
+				border: 1px solid #000000;
+				border-style: none;
+				width: 100px;
+				height: 30px;
+				margin: 0px auto;
+				margin-top: 10px;
+
+			}
+
+			.anniu button {
+				width: 100px;
+				height: 30px;
+
+			}
+
+			.guanggao {
+				border: 1px solid #CCCCCC;
+				height: 100px;
+				width: 100px;
+				display: block;
+				position: relative;
+				float: right;
+				bottom: 260px;
+
+
+
+			}
+
+			.guanbi {
+				position: absolute;
+				top: 0px;
+				left: -23px;
+				background-color: white;
+				border: #CCCCCC solid 1px;
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<label>用户名</label>
+			<input type="text" name="" id="yhm" placeholder="请输入您的账号" value="" />
+
+		</div>
+		<div class="box">
+
+			<label>密码</label>
+			<img id="eye" src="img/不可视化图(已去底).jpg">
+			<input type="password" name="" id="pwd" value="" />
+			<script type="text/javascript">
+				var eye = document.getElementById('eye');
+				var password = document.getElementById('pwd')
+				var flag = 0;
+				eye.onclick = function() {
+					if (flag == 0) {
+						password.type = "text";
+						eye.src = "img/可视化(已去底).jpg";
+						flag = 1;
+					} else {
+						password.type = "password";
+						eye.src = "img/不可视化图(已去底).jpg";
+						flag = 0;
+					}
+				}
+			</script>
+
+		</div>
+		<div class="anniu">
+			<button type="button" onclick="dl()">登录</button>
+		</div>
+		<div class="guanggao" id="gg">
+			<img src="img/touxiang(已去底).jpg">
+
+			<button class="guanbi" id="gb">
+				×
+				<script type="text/javascript">
+					var gb = document.getElementById('gb');
+					var guang1 = document.getElementById('gg');
+					gb.onclick = function() {
+						guang1.style.display = "none";
+					}
+				</script>
+
+			</button>
+			<p>合作扫码联系</p>
+		</div>
+
+		<script type="text/javascript" src="js/denglu.js"></script>
+	</body>
+</html>
