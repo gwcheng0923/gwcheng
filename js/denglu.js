@@ -3,7 +3,7 @@ function dl() {
 	var zh = document.getElementById("yhm").value;
 	var mm = document.getElementById("pwd").value;
 	if (zh == "gwc" && mm == "123456789") {
-		window.location.href = "index.html"
+		window.location.href = "喜欢我的宝儿.html"
 		window.alert("登录成功！");
 	} else {
 		if (zh == "" || mm == "") {
