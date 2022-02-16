@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- <p>在页面显示一个时钟</p>
+		<p id="demo"></p>
+		<script>
+		var myVar=setInterval(function(){myTimer()},1000);
+		function myTimer(){
+			var d=new Date();
+			var dq=new Date();
+			dq.setDate(2021,11,26);
+			var t=d.toLocaleTimeString();
+			document.getElementById("demo").innerHTML=t;
+		}
+		</script> -->
+
+		<div id="div"></div>
+		<button onclick="clock()">点击查看倒计时</button>
+		<script type="text/javascript">
+			//clock();
+			function clock() {
+
+				var today = new Date(); //当前时间
+					// h = today.getHours(),
+					// m = today.getMinutes(),
+					 //s = today.getSeconds();
+					
+				var stopTime = new Date("Nov 27 2021 00:00:00"); //结束时间
+					// stopH = stopTime.getHours(),
+					// stopM = stopTime.getMinutes(),
+					// stopS = stopTime.getSeconds();
+				var shenyu = stopTime.getTime() - today.getTime(), //倒计时毫秒数
+					shengyuD = parseInt(shenyu / (60 * 60 * 24 * 1000)), //转换为天
+					D = parseInt(shenyu) - parseInt(shengyuD * 60 * 60 * 24 * 1000), //除去天的毫秒数
+					shengyuH = parseInt(D / (60 * 60 * 1000)), //除去天的毫秒数转换成小时
+					H = D - shengyuH * 60 * 60 * 1000, //除去天、小时的毫秒数
+					shengyuM = parseInt(H / (60 * 1000)), //除去天的毫秒数转换成分钟
+					M = H - shengyuM * 60 * 1000; //除去天、小时、分的毫秒数
+
+				S = parseInt((shenyu - shengyuD * 60 * 60 * 24 * 1000 - shengyuH * 60 * 60 * 1000 - shengyuM * 60 * 1000) / 1000) //除去天、小时、分的毫秒数转化为秒
+
+				document.getElementById("div").innerHTML = (shengyuD + "天" + shengyuH + "小时" + shengyuM + "分" + S + "秒" + "<br>");
+
+				// setTimeout("clock()",500);
+
+				//setTimeout(clock, 1000);
+				setInterval(clock, 1000);
+
+			}
+			
+		</script>
+
+		​
+	</body>
+</html>
